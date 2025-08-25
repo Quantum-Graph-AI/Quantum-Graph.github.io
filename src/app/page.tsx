@@ -137,7 +137,7 @@ function FallbackPage() {
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
-  const [showFallback, setShowFallback] = useState(true); // Iniciar com fallback por enquanto
+  const [showFallback, setShowFallback] = useState(false); // Tentar 3D primeiro
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -152,13 +152,22 @@ export default function Home() {
       });
     }, 200);
 
+    // Se após 8 segundos ainda estiver carregando, ativar fallback
+    const fallbackTimer = setTimeout(() => {
+      if (loading) {
+        setShowFallback(true);
+        setLoading(false);
+      }
+    }, 8000);
+
     return () => {
       clearInterval(timer);
+      clearTimeout(fallbackTimer);
     };
-  }, []);
+  }, [loading]);
 
-  // Por enquanto, sempre mostrar fallback até 3D estar estável
-  if (showFallback || true) {
+  // Tentar versão 3D, fallback se falhar após timeout
+  if (showFallback) {
     return <FallbackPage />;
   }
 
