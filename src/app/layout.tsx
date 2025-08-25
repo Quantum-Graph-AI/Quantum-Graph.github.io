@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from "@/contexts/LanguageContext";
 
 
 const geistSans = Geist({
@@ -15,24 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "QuantumGraph - Next-Generation Artificial Intelligence",
-  description: "Transformamos dados em insights poderosos através de tecnologias quânticas avançadas e inteligência artificial de última geração.",
-  keywords: "inteligência artificial, computação quântica, machine learning, IA, quantum computing, algoritmos quânticos",
+  title: "QuantumGraph - Universo de Soluções em IA",
+  description: "Navegue pelo universo interativo de grafos 3D da QuantumGraph. Especialistas em Inteligência Artificial, Machine Learning, Sistemas Agênticos e Computação Quântica.",
+  keywords: "inteligência artificial, machine learning, sistemas agênticos, computação quântica, ciência de dados, LangGraph, RAG, chatbots, automação",
   authors: [{ name: "Davi Castro Samora" }],
   creator: "QuantumGraph",
   publisher: "QuantumGraph",
   openGraph: {
-    title: "QuantumGraph - Next-Generation Artificial Intelligence",
-    description: "Transformamos dados em insights poderosos através de tecnologias quânticas avançadas e inteligência artificial de última geração.",
+    title: "QuantumGraph - Universo de Soluções em IA",
+    description: "Explore o universo interativo de grafos 3D da QuantumGraph. Sistemas agênticos, Machine Learning e soluções avançadas em IA.",
     type: "website",
     locale: "pt_BR",
-    alternateLocale: "en_US",
     siteName: "QuantumGraph",
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuantumGraph - Next-Generation Artificial Intelligence",
-    description: "Transformamos dados em insights poderosos através de tecnologias quânticas avançadas e inteligência artificial de última geração.",
+    title: "QuantumGraph - Universo de Soluções em IA",
+    description: "Explore o universo interativo de grafos 3D da QuantumGraph. Sistemas agênticos, Machine Learning e soluções avançadas em IA.",
     creator: "@quantumgraph",
   },
 };
@@ -45,10 +43,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head></head>
-      <body suppressHydrationWarning className="antialiased">
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+      <body suppressHydrationWarning className="antialiased bg-black overflow-hidden">
+        {children}
       </body>
     </html>
   );

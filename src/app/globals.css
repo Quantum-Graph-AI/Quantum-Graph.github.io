@@ -96,9 +96,12 @@
   animation-delay: 4s;
 }
 
-/* Smooth scrolling */
-html {
+/* Disable scrolling for 3D experience */
+html, body {
   scroll-behavior: smooth;
+  overflow: hidden;
+  height: 100%;
+  background: #000;
 }
 
 /* Custom scrollbar */
