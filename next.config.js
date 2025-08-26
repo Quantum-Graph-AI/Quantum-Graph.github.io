@@ -6,7 +6,8 @@ const nextConfig = {
     images: {
       unoptimized: true,
     },
-    // Corrigir configuração conforme warning do Next.js 15
+    // Configuração para GitHub Pages - sem basePath para repositório de projeto
+    // Conforme documentação: usar gh-pages branch com biblioteca gh-pages
     outputFileTracingRoot: process.cwd(),
   };
 

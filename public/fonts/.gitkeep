@@ -1,0 +1,2 @@
+# Pasta para fontes locais - evitar problemas de CORS
+# Conforme documentação: todos os assets devem ser servidos da mesma origem

@@ -64,7 +64,6 @@ function GraphNode({ node, onClick, isActive }: GraphNodeProps) {
         color="white"
         anchorX="center"
         anchorY="middle"
-        font="/fonts/GeistVF.woff"
       >
         {node.label}
       </Text>

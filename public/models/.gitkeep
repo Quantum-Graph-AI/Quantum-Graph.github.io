@@ -1,0 +1,2 @@
+# Pasta para modelos 3D locais (.gltf, .glb, .obj, .mtl)
+# Conforme documentação: garantir que assets 3D sejam da mesma origem para evitar CORS
