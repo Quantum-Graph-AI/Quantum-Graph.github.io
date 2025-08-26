@@ -12,11 +12,10 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow only one concurrent deployment, canceling previous deployments to prevent queue buildup
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   # Build job
@@ -104,3 +103,7 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
+      with:
+        timeout: 300000  # 5 minutos em vez do padrão de 10 minutos
+        error_count: 5   # Reduzido de 10 para 5 tentativas
+        reporting_interval: 10000  # Relatório a cada 10 segundos
