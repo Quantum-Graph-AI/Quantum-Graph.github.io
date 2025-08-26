@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Sparkles, ArrowRight, Linkedin, Github, BookOpen, Target, Eye, Heart, Cpu, Brain, Users } from 'lucide-react';
 
+
 // Simulação de um universo de grafos 2D interativo (funciona em GitHub Pages)
 function GraphUniverseCSS() {
   const [activeNode, setActiveNode] = useState<string | null>(null);
@@ -342,7 +343,46 @@ function GraphUniverseCSS() {
 }
 
 export default function Home() {
-  // Usar versão CSS que funciona GARANTIDAMENTE no GitHub Pages
-  return <GraphUniverseCSS />;
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Redirecionamento rápido para a versão HTML pura
+    const timer = setTimeout(() => {
+      window.location.href = '/universe.html';
+    }, 100);
+
+    const loadingTimer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(loadingTimer);
+    };
+  }, []);
+
+  return (
+    <div className="h-screen w-full bg-gradient-to-br from-gray-900 via-black to-blue-900 flex items-center justify-center">
+      <div className="text-center">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+          className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full mx-auto mb-4"
+        />
+        <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-2">
+          QuantumGraph
+        </h2>
+        <p className="text-gray-400">Redirecionando para universo 3D...</p>
+        <div className="mt-4">
+          <a 
+            href="/universe.html" 
+            className="text-cyan-400 hover:text-cyan-300 underline"
+          >
+            Clique aqui se não redirecionou automaticamente
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 }
   
