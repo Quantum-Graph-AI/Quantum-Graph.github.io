@@ -75,10 +75,14 @@ jobs:
         NODE_ENV: production
         CI: true
 
-    - name: Add .nojekyll file
+    - name: Add .nojekyll file and verify build output
       run: |
         mkdir -p out
         touch out/.nojekyll
+        echo "Build output structure:"
+        ls -la out/
+        echo "Verifying index.html exists:"
+        ls -la out/index.html || echo "index.html not found"
 
     - name: Setup Pages
       uses: actions/configure-pages@v5

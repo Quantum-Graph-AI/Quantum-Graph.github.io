@@ -6,8 +6,10 @@ const nextConfig = {
     images: {
       unoptimized: true,
     },
-    // Configuração para GitHub Pages - sem basePath para repositório de projeto
-    // Conforme documentação: usar gh-pages branch com biblioteca gh-pages
+    // Configuração para GitHub Pages - basePath necessário para site de projeto
+    // URL: https://quantum-graph-ai.github.io/Quantum-Graph.github.io/
+    basePath: '/Quantum-Graph.github.io',
+    assetPrefix: '/Quantum-Graph.github.io',
     outputFileTracingRoot: process.cwd(),
   };
 
