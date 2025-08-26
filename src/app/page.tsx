@@ -346,18 +346,19 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Redirecionamento rápido para a versão HTML pura
+    // Redirecionamento META refresh para funcionar no GitHub Pages
+    const meta = document.createElement('meta');
+    meta.httpEquiv = 'refresh';
+    meta.content = '0; url=/universe.html';
+    document.head.appendChild(meta);
+    
+    // Redirecionamento JavaScript como fallback
     const timer = setTimeout(() => {
-      window.location.href = '/universe.html';
+      window.location.replace('/universe.html');
     }, 100);
-
-    const loadingTimer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
 
     return () => {
       clearTimeout(timer);
-      clearTimeout(loadingTimer);
     };
   }, []);
 
