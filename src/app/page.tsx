@@ -342,47 +342,52 @@ function GraphUniverseCSS() {
   );
 }
 
+// IMPLEMENTAÇÃO DIRETA DO UNIVERSO 3D NA PÁGINA PRINCIPAL
+// Conforme documentação GitHub Pages - usar index.html como entrada principal
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Redirecionamento META refresh para funcionar no GitHub Pages
-    const meta = document.createElement('meta');
-    meta.httpEquiv = 'refresh';
-    meta.content = '0; url=/universe.html';
-    document.head.appendChild(meta);
-    
-    // Redirecionamento JavaScript como fallback
+    // Aguardar carregamento do DOM
     const timer = setTimeout(() => {
-      window.location.replace('/universe.html');
-    }, 100);
+      setLoading(false);
+    }, 2000);
 
-    return () => {
-      clearTimeout(timer);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
+  // Renderizar diretamente o universo 3D conforme documentação
   return (
-    <div className="h-screen w-full bg-gradient-to-br from-gray-900 via-black to-blue-900 flex items-center justify-center">
-      <div className="text-center">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full mx-auto mb-4"
-        />
-        <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-2">
-          QuantumGraph
-        </h2>
-        <p className="text-gray-400">Redirecionando para universo 3D...</p>
-        <div className="mt-4">
-          <a 
-            href="/universe.html" 
-            className="text-cyan-400 hover:text-cyan-300 underline"
-          >
-            Clique aqui se não redirecionou automaticamente
-          </a>
+    <div className="h-screen w-full overflow-hidden">
+      {loading ? (
+        <div className="h-screen w-full bg-gradient-to-br from-gray-900 via-black to-blue-900 flex items-center justify-center">
+          <div className="text-center">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full mx-auto mb-4"
+            />
+            <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-2">
+              QuantumGraph
+            </h2>
+            <p className="text-gray-400">Inicializando universo 3D...</p>
+          </div>
         </div>
-      </div>
+      ) : (
+        // Embedding do universo HTML diretamente via iframe
+        // Solução mais compatível com GitHub Pages estático
+        <iframe 
+          src="/universe.html" 
+          style={{
+            width: '100%', 
+            height: '100vh', 
+            border: 'none',
+            margin: 0,
+            padding: 0
+          }}
+          title="QuantumGraph 3D Universe"
+        />
+      )}
     </div>
   );
 }
