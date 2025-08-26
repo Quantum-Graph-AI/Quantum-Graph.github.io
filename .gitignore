@@ -33,9 +33,22 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
 
 # TypeScript
 *.tsbuildinfo
+
+# npm cache
+.npm
+
+# ESLint cache
+.eslintcache
 
 # Miscellaneous
 *.log
