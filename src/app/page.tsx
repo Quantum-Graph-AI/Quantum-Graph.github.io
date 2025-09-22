@@ -12,7 +12,7 @@ export default function Home() {
 
   if (!isClient) {
     return (
-      <div className="h-screen w-full bg-gradient-to-br from-gray-900 via-black to-blue-900 flex items-center justify-center">
+      <div className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-black to-blue-900 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-4">
             QuantumGraph AI
@@ -55,7 +55,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-blue-900 flex items-center pt-20">
+      <section id="home" className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-blue-900 flex items-center pt-20 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
@@ -129,31 +129,24 @@ export default function Home() {
                 title: "Agentic Business Law Researcher",
                 description: "Sistema agêntico para pesquisa jurídica empresarial automatizada com IA",
                 technologies: ["LangChain", "LangGraph", "Python", "RAG"],
-                stars: "15",
                 link: "https://github.com/SamoraDC/AgenticBusinessLawResearcher"
               },
               {
                 title: "Agentic Real Estate System",
                 description: "Plataforma inteligente para análise e gestão do mercado imobiliário",
                 technologies: ["Pydantic", "AI Agents", "Data Science", "Python"],
-                stars: "12",
                 link: "https://github.com/SamoraDC/AgenticRealEstateSystem"
               },
               {
                 title: "Financial Audit Agentic System",
                 description: "Sistema de auditoria financeira automatizada com agentes de IA",
                 technologies: ["PydanticAI", "Agno", "Financial Analysis", "ML"],
-                stars: "8",
                 link: "https://github.com/SamoraDC/FinancialAuditAgenticSystem"
               }
             ].map((project, index) => (
               <div key={index} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300">
-                <div className="flex items-start justify-between mb-4">
+                <div className="mb-4">
                   <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                  <div className="flex items-center space-x-1 text-yellow-400">
-                    <Star size={16} />
-                    <span className="text-sm">{project.stars}</span>
-                  </div>
                 </div>
                 <p className="text-gray-400 mb-4 leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -338,25 +331,28 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Introdução aos Sistemas Agênticos",
-                excerpt: "Explorando os fundamentos dos sistemas multi-agentes e suas aplicações práticas...",
-                category: "Engenharia Agêntica",
+                title: "Building Autonomous AI Agents with LangGraph",
+                excerpt: "Explorando como criar sistemas agênticos autônomos que podem tomar decisões complexas e executar tarefas de forma independente...",
+                category: "Sistemas Agênticos",
+                readTime: "10 min",
+                date: "12 Dez 2024",
+                url: "https://medium.com/@samora.davi/building-autonomous-ai-agents-with-langgraph"
+              },
+              {
+                title: "RAG Architecture: Beyond Simple Retrieval",
+                excerpt: "Como implementar arquiteturas RAG avançadas para melhorar a precisão e relevância das respostas de LLMs...",
+                category: "Engenharia de IA",
                 readTime: "8 min",
-                date: "15 Mar 2024"
+                date: "25 Nov 2024",
+                url: "https://medium.com/@samora.davi/rag-architecture-beyond-simple-retrieval"
               },
               {
-                title: "RAG: Revolucionando Consultas de Documentos",
-                excerpt: "Como o Retrieval-Augmented Generation está transformando a forma como interagimos com dados...",
-                category: "Inferência Causal",
+                title: "Financial AI Agents: Transforming Audit Processes",
+                excerpt: "Como agentes de IA estão revolucionando a auditoria financeira através de automação inteligente e análise preditiva...",
+                category: "FinTech AI",
                 readTime: "12 min",
-                date: "22 Fev 2024"
-              },
-              {
-                title: "LangGraph: Orquestrando Agentes de IA",
-                excerpt: "Tutorial completo sobre como usar LangGraph para criar workflows inteligentes...",
-                category: "Tutoriais",
-                readTime: "15 min",
-                date: "8 Fev 2024"
+                date: "8 Nov 2024",
+                url: "https://medium.com/@samora.davi/financial-ai-agents-transforming-audit-processes"
               }
             ].map((article, index) => (
               <div key={index} className="bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-300">
@@ -374,7 +370,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3">{article.title}</h3>
                   <p className="text-gray-400 mb-4">{article.excerpt}</p>
-                  <a href="https://medium.com/@samora.davi" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-green-400 hover:text-green-300 transition-colors">
+                  <a href={article.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-green-400 hover:text-green-300 transition-colors">
                     <span>Ler Artigo Completo</span>
                     <ExternalLink size={16} />
                   </a>
