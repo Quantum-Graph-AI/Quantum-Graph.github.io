@@ -13,7 +13,11 @@ export default function Header() {
     { key: 'home', href: '#home' },
     { key: 'about', href: '#about' },
     { key: 'services', href: '#services' },
-    { key: 'team', href: '#team' },
+    { key: 'projects', href: '#projects' },
+    { key: 'consulting', href: '#consulting' },
+    { key: 'founder', href: '#founder' },
+    { key: 'blog', href: '#blog' },
+    { key: 'quantum', href: '#quantum' },
     { key: 'contact', href: '#contact' },
   ];
 

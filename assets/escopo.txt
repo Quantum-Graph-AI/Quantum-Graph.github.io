@@ -1,0 +1,156 @@
+Estrutura Sugerida para o Site da Quantum Graph AI
+O foco deve ser em clareza, autoridade técnica e visão de futuro.
+
+Menu Principal:
+
+Início
+
+Projetos Open-Source
+
+Consultoria de IA
+
+O Fundador
+
+Blog & Insights
+
+O Futuro: Computação Quântica
+
+Contato
+
+Detalhamento de Cada Seção:
+1. Início (A Porta de Entrada)
+É a primeira impressão. Precisa ser impactante e direto.
+
+O que deve ter:
+
+Título Forte: Algo como: "Acelerando o Futuro da Inteligência Artificial com Código Aberto."
+
+Subtítulo (Missão): "Somos uma empresa dedicada a impulsionar projetos Open-Source em Engenharia de IA e Engenharia Agêntica, construindo as bases para a próxima geração de tecnologia."
+
+Três Pilares Claros: Três caixas ou ícones destacando:
+
+Inovação Open-Source: "Contribuímos e criamos ferramentas de IA de ponta para a comunidade."
+
+Consultoria Especializada: "Soluções de IA sob medida com a expertise do nosso fundador, Davi Samora."
+
+Visão Quântica: "Explorando a fronteira da computação para criar a plataforma de ensino do amanhã."
+
+Call-to-Action (CTA) Principal: Um botão bem visível: "Explore Nossos Projetos" (levando para a aba de projetos).
+
+Como tornar envolvente e interativo:
+
+Use um fundo com animações sutis de grafos ou redes neurais.
+
+O título principal pode ter um efeito de "digitação" para chamar a atenção.
+
+2. Projetos Open-Source (O Coração da Empresa)
+Esta é sua vitrine principal. É aqui que você prova sua capacidade técnica.
+
+O que deve ter:
+
+Galeria de Projetos: Puxe diretamente os projetos do seu GitHub (SamoraDC) : https://github.com/SamoraDC - Use esses projetos: https://github.com/SamoraDC/AgenticBusinessLawResearcher, https://github.com/SamoraDC/AgenticRealEstateSystem, https://github.com/SamoraDC/FinancialAuditAgenticSystem. . Crie "cards" para cada projeto importante.
+
+Conteúdo de cada Card:
+
+Nome do Projeto: (Ex: "Análise de Inferência Causal com Modelos Gráficos").
+
+Descrição Curta: Uma ou duas linhas explicando o objetivo do projeto.
+
+Tecnologias Usadas: Tags como Python, LangChain, LangGraph, Pydantic, PydanticAI, Agno, AI Agents, Data Scientist, Causal Inference.
+
+Links: Botões para "Ver no GitHub" e, se houver, "Ler Artigo Relacionado" (linkando para o Medium).
+
+Como tornar envolvente e interativo:
+
+Filtros Dinâmicos: Permita que os visitantes filtrem os projetos pelas tags de tecnologia. Ao clicar em LangChain, por exemplo, apenas os projetos que usam essa tecnologia são exibidos.
+
+Estatísticas do GitHub: Se possível, integre com a API do GitHub para mostrar o número de estrelas (stars) e forks em tempo real. Isso gera muita credibilidade.
+
+3. Consultoria de IA (A Oferta de Serviço)
+Aqui você transforma conhecimento em negócio. Precisa ser claro, profissional e direto.
+
+O que deve ter:
+
+Título: "Consultoria em Engenharia de IA com Davi Samora".
+
+Áreas de Expertise (baseado no seu LinkedIn e Medium): https://www.linkedin.com/in/samoradc/ | https://medium.com/@samora.davi
+
+Desenvolvimento de Agentes de IA (usando LangChain e LangGraph).
+
+Sistemas de RAG (Retrieval-Augmented Generation).
+
+Modelagem com LLMs (Large Language Models).
+
+Inferência Causal e Modelos Gráficos.
+
+Como Funciona: Um passo a passo simples:
+
+Solicitação: "Preencha o formulário com os detalhes do seu desafio."
+
+Análise: "Analisaremos a viabilidade e a disponibilidade."
+
+Contato: "Entraremos em contato para agendar uma conversa inicial."
+
+Observação: Deixe claro que o serviço é "mediante disponibilidade" para gerenciar as expectativas.
+
+Como tornar envolvente e interativo:
+
+Formulário de Requisição Direto: Um formulário simples e direto na própria página para que o cliente em potencial possa solicitar a consultoria sem sair do site.
+
+4. O Fundador (O Rosto por Trás da Inovação)
+Humaniza a empresa e constrói autoridade.
+
+O que deve ter:
+
+Foto Profissional: Uma boa foto sua, Davi Samora.
+
+Biografia Resumida (extraída do LinkedIn): "Davi Samora é um Cientista de Dados e Engenheiro de IA especialista em LLMs, RAGs e Agentes de IA. Com paixão por código aberto e orquestração de agentes com LangChain e LangGraph, ele fundou a Quantum Graph AI para..."
+
+Links para Perfis: Ícones bem visíveis para seu LinkedIn, GitHub e Medium.
+
+Como tornar envolvente e interativo:
+
+Crie uma pequena linha do tempo visual com seus marcos profissionais mais importantes.
+
+5. Blog & Insights (Compartilhando Conhecimento)
+Posiciona você como uma autoridade no assunto e atrai tráfego qualificado.
+
+O que deve ter:
+
+Integração com o Medium: Crie uma galeria de "cards" para seus artigos do Medium (@samora.davi).
+
+Conteúdo do Card: Título do artigo, uma imagem de capa e um snippet inicial.
+
+Botão "Ler Artigo Completo" que redireciona para a página do Medium.
+
+Como tornar envolvente e interativo:
+
+Categorias: Organize os artigos por temas, como "Inferência Causal", "Engenharia Agêntica", "Tutoriais".
+
+6. O Futuro: Computação Quântica (A Grande Visão)
+Esta página é o seu diferencial. Gera curiosidade e mostra que a empresa pensa a longo prazo.
+
+O que deve ter:
+
+Título: "Preparando o Terreno para a Revolução Quântica".
+
+Texto Visionário: Explique por que a Computação Quântica é o futuro e qual o objetivo da Quantum Graph AI em se tornar uma plataforma de ensino. Fale sobre o potencial para resolver problemas complexos em IA, finanças, etc.
+
+Roadmap Simplificado: Um infográfico mostrando os passos futuros: "Hoje: Foco em IA Open-Source" -> "Amanhã: Cursos Introdutórios de QC" -> "Futuro: Plataforma Completa de Ensino".
+
+Como tornar envolvente e interativo:
+
+Cadastro para Interessados: Coloque um campo de e-mail com a chamada: "Quer ser o primeiro a saber sobre nossa jornada na Computação Quântica? Deixe seu e-mail." Isso cria uma lista de leads qualificados para o futuro.
+
+7. Contato
+Simples e funcional.
+
+O que deve ter:
+
+Informações de contato (e-mail profissional): samora.davi@hotmail.com .
+
+Links para as redes sociais (LinkedIn, GitHub): https://www.linkedin.com/in/samoradc/ | https://medium.com/@samora.davi | https://github.com/SamoraDC
+
+Um formulário de contato geral para dúvidas.
+
+Ao seguir esta estrutura, seu site não será apenas um cartão de visitas, mas uma plataforma dinâmica que demonstra sua expertise, compartilha seu conhecimento e constrói uma comunidade em torno da sua visão de futuro.

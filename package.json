@@ -11,9 +11,12 @@
         "format": "npx biome format --write",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d out --dotfiles",
-        "build:production": "cross-env NODE_OPTIONS='--max-old-space-size=4096' next build"
+        "build:production": "cross-env NODE_OPTIONS='--max-old-space-size=4096' next build",
+        "build:static": "rm -rf .next out && cross-env NODE_OPTIONS='--max-old-space-size=4096' next build",
+        "build:clean": "rm -rf .next out node_modules/.cache && npm run build:static"
     },
     "dependencies": {
+        "@emotion/is-prop-valid": "^1.4.0",
         "@react-three/drei": "^9.114.0",
         "@react-three/fiber": "^8.17.10",
         "class-variance-authority": "^0.7.1",

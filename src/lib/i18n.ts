@@ -6,6 +6,11 @@ export interface Translations {
     home: string;
     about: string;
     services: string;
+    projects: string;
+    consulting: string;
+    founder: string;
+    blog: string;
+    quantum: string;
     team: string;
     contact: string;
   };
@@ -58,6 +63,74 @@ export interface Translations {
     };
   };
   
+  // Projects Section
+  projects: {
+    title: string;
+    subtitle: string;
+    viewGitHub: string;
+    liveDDemo: string;
+    technologies: string;
+  };
+
+  // Consulting Section
+  consulting: {
+    title: string;
+    subtitle: string;
+    service1: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    service2: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    service3: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    cta: string;
+  };
+
+  // Founder Section
+  founder: {
+    title: string;
+    subtitle: string;
+    name: string;
+    role: string;
+    bio: string;
+    experience: string;
+    skills: string[];
+    social: {
+      linkedin: string;
+      github: string;
+      twitter: string;
+    };
+  };
+
+  // Blog Section
+  blog: {
+    title: string;
+    subtitle: string;
+    readMore: string;
+    publishedOn: string;
+    viewAllArticles: string;
+  };
+
+  // Quantum Section
+  quantum: {
+    title: string;
+    subtitle: string;
+    description: string;
+    features: {
+      title: string;
+      description: string;
+    }[];
+    cta: string;
+  };
+
   // Contact Section
   contact: {
     title: string;
@@ -65,15 +138,19 @@ export interface Translations {
     form: {
       name: string;
       email: string;
+      company: string;
+      subject: string;
       message: string;
       send: string;
       success: string;
       error: string;
+      required: string;
     };
     info: {
       email: string;
       linkedin: string;
       github: string;
+      location: string;
     };
   };
   
@@ -90,6 +167,11 @@ export const translations: Record<Language, Translations> = {
       home: 'Início',
       about: 'Sobre',
       services: 'Serviços',
+      projects: 'Projetos',
+      consulting: 'Consultoria',
+      founder: 'Fundador',
+      blog: 'Blog',
+      quantum: 'Quantum',
       team: 'Equipe',
       contact: 'Contato',
     },
@@ -133,21 +215,93 @@ export const translations: Record<Language, Translations> = {
         bio: 'Especialista em inteligência artificial e computação quântica, com paixão por transformar ideias inovadoras em soluções práticas.',
       },
     },
+    projects: {
+      title: 'Nossos Projetos',
+      subtitle: 'Inovações em IA e Computação Quântica',
+      viewGitHub: 'Ver no GitHub',
+      liveDDemo: 'Demo ao Vivo',
+      technologies: 'Tecnologias',
+    },
+    consulting: {
+      title: 'Serviços de Consultoria',
+      subtitle: 'Soluções Personalizadas em IA',
+      service1: {
+        title: 'Estratégia em IA',
+        description: 'Desenvolvemos estratégias abrangentes para implementação de IA em sua organização.',
+        features: ['Análise de viabilidade', 'Roadmap de implementação', 'ROI e métricas', 'Treinamento de equipes'],
+      },
+      service2: {
+        title: 'Desenvolvimento Custom',
+        description: 'Criamos soluções de IA personalizadas para seus desafios específicos.',
+        features: ['Machine Learning', 'Deep Learning', 'NLP e Visão Computacional', 'Integração de APIs'],
+      },
+      service3: {
+        title: 'Otimização e Escalabilidade',
+        description: 'Otimizamos sistemas existentes e preparamos para crescimento.',
+        features: ['Performance Tuning', 'Arquitetura Cloud', 'MLOps e DevOps', 'Monitoramento contínuo'],
+      },
+      cta: 'Agendar Consulta',
+    },
+    founder: {
+      title: 'Fundador',
+      subtitle: 'Liderança em Inovação',
+      name: 'Davi Castro Samora',
+      role: 'Fundador & CEO',
+      bio: 'Especialista em inteligência artificial e computação quântica, com mais de 10 anos de experiência em desenvolvimento de soluções inovadoras.',
+      experience: '10+ anos em IA e Tecnologia',
+      skills: ['Inteligência Artificial', 'Machine Learning', 'Computação Quântica', 'Arquitetura de Software', 'Liderança Técnica'],
+      social: {
+        linkedin: 'LinkedIn',
+        github: 'GitHub',
+        twitter: 'Twitter',
+      },
+    },
+    blog: {
+      title: 'Blog & Insights',
+      subtitle: 'Pensamentos sobre IA e Futuro',
+      readMore: 'Ler Mais',
+      publishedOn: 'Publicado em',
+      viewAllArticles: 'Ver Todos os Artigos',
+    },
+    quantum: {
+      title: 'Futuro Quântico',
+      subtitle: 'A Próxima Revolução Tecnológica',
+      description: 'Exploramos as fronteiras da computação quântica e seu potencial para transformar a inteligência artificial.',
+      features: [
+        {
+          title: 'Algoritmos Quânticos',
+          description: 'Desenvolvimento de algoritmos que aproveitam os princípios da mecânica quântica.',
+        },
+        {
+          title: 'Supremacia Quântica',
+          description: 'Pesquisa em problemas que computadores clássicos não conseguem resolver eficientemente.',
+        },
+        {
+          title: 'IA Quântica',
+          description: 'Integração de machine learning com processamento quântico para acelerar descobertas.',
+        },
+      ],
+      cta: 'Explorar Tecnologias',
+    },
     contact: {
       title: 'Entre em Contato',
       subtitle: 'Vamos Conversar Sobre Seu Projeto',
       form: {
         name: 'Nome',
         email: 'E-mail',
+        company: 'Empresa',
+        subject: 'Assunto',
         message: 'Mensagem',
         send: 'Enviar Mensagem',
         success: 'Mensagem enviada com sucesso!',
         error: 'Erro ao enviar mensagem. Tente novamente.',
+        required: 'Campo obrigatório',
       },
       info: {
         email: 'contato@quantumgraph.ai',
         linkedin: 'LinkedIn',
         github: 'GitHub',
+        location: 'São Paulo, Brasil',
       },
     },
     footer: {
@@ -160,6 +314,11 @@ export const translations: Record<Language, Translations> = {
       home: 'Home',
       about: 'About',
       services: 'Services',
+      projects: 'Projects',
+      consulting: 'Consulting',
+      founder: 'Founder',
+      blog: 'Blog',
+      quantum: 'Quantum',
       team: 'Team',
       contact: 'Contact',
     },
@@ -203,21 +362,93 @@ export const translations: Record<Language, Translations> = {
         bio: 'Expert in artificial intelligence and quantum computing, with a passion for transforming innovative ideas into practical solutions.',
       },
     },
+    projects: {
+      title: 'Our Projects',
+      subtitle: 'Innovations in AI and Quantum Computing',
+      viewGitHub: 'View on GitHub',
+      liveDDemo: 'Live Demo',
+      technologies: 'Technologies',
+    },
+    consulting: {
+      title: 'Consulting Services',
+      subtitle: 'Custom AI Solutions',
+      service1: {
+        title: 'AI Strategy',
+        description: 'We develop comprehensive strategies for AI implementation in your organization.',
+        features: ['Feasibility Analysis', 'Implementation Roadmap', 'ROI and Metrics', 'Team Training'],
+      },
+      service2: {
+        title: 'Custom Development',
+        description: 'We create personalized AI solutions for your specific challenges.',
+        features: ['Machine Learning', 'Deep Learning', 'NLP and Computer Vision', 'API Integration'],
+      },
+      service3: {
+        title: 'Optimization & Scalability',
+        description: 'We optimize existing systems and prepare them for growth.',
+        features: ['Performance Tuning', 'Cloud Architecture', 'MLOps and DevOps', 'Continuous Monitoring'],
+      },
+      cta: 'Schedule Consultation',
+    },
+    founder: {
+      title: 'Founder',
+      subtitle: 'Leadership in Innovation',
+      name: 'Davi Castro Samora',
+      role: 'Founder & CEO',
+      bio: 'Expert in artificial intelligence and quantum computing, with over 10 years of experience developing innovative solutions.',
+      experience: '10+ years in AI and Technology',
+      skills: ['Artificial Intelligence', 'Machine Learning', 'Quantum Computing', 'Software Architecture', 'Technical Leadership'],
+      social: {
+        linkedin: 'LinkedIn',
+        github: 'GitHub',
+        twitter: 'Twitter',
+      },
+    },
+    blog: {
+      title: 'Blog & Insights',
+      subtitle: 'Thoughts on AI and the Future',
+      readMore: 'Read More',
+      publishedOn: 'Published on',
+      viewAllArticles: 'View All Articles',
+    },
+    quantum: {
+      title: 'Quantum Future',
+      subtitle: 'The Next Technological Revolution',
+      description: 'We explore the frontiers of quantum computing and its potential to transform artificial intelligence.',
+      features: [
+        {
+          title: 'Quantum Algorithms',
+          description: 'Development of algorithms that harness the principles of quantum mechanics.',
+        },
+        {
+          title: 'Quantum Supremacy',
+          description: 'Research on problems that classical computers cannot solve efficiently.',
+        },
+        {
+          title: 'Quantum AI',
+          description: 'Integration of machine learning with quantum processing to accelerate discoveries.',
+        },
+      ],
+      cta: 'Explore Technologies',
+    },
     contact: {
       title: 'Get in Touch',
       subtitle: 'Let\'s Talk About Your Project',
       form: {
         name: 'Name',
         email: 'Email',
+        company: 'Company',
+        subject: 'Subject',
         message: 'Message',
         send: 'Send Message',
         success: 'Message sent successfully!',
         error: 'Error sending message. Please try again.',
+        required: 'Required field',
       },
       info: {
         email: 'contact@quantumgraph.ai',
         linkedin: 'LinkedIn',
         github: 'GitHub',
+        location: 'São Paulo, Brazil',
       },
     },
     footer: {

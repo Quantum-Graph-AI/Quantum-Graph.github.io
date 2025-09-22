@@ -14,23 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "QuantumGraph - Universo de Soluções em IA",
-  description: "Navegue pelo universo interativo de grafos 3D da QuantumGraph. Especialistas em Inteligência Artificial, Machine Learning, Sistemas Agênticos e Computação Quântica.",
-  keywords: "inteligência artificial, machine learning, sistemas agênticos, computação quântica, ciência de dados, LangGraph, RAG, chatbots, automação",
+  title: "QuantumGraph AI - Consultoria e Desenvolvimento em Inteligência Artificial",
+  description: "QuantumGraph AI oferece consultoria especializada em IA, desenvolvimento de sistemas agênticos e soluções em computação quântica. Fundada por Davi Castro Samora, especialista com 10+ anos de experiência.",
+  keywords: "consultoria inteligência artificial, sistemas agênticos, machine learning, computação quântica, ciência de dados, LangGraph, RAG, chatbots, automação, Davi Castro Samora",
   authors: [{ name: "Davi Castro Samora" }],
-  creator: "QuantumGraph",
-  publisher: "QuantumGraph",
+  creator: "QuantumGraph AI",
+  publisher: "QuantumGraph AI",
   openGraph: {
-    title: "QuantumGraph - Universo de Soluções em IA",
-    description: "Explore o universo interativo de grafos 3D da QuantumGraph. Sistemas agênticos, Machine Learning e soluções avançadas em IA.",
+    title: "QuantumGraph AI - Consultoria e Desenvolvimento em Inteligência Artificial",
+    description: "Consultoria especializada em IA, sistemas agênticos e computação quântica. Transformando ideias em soluções inteligentes.",
     type: "website",
     locale: "pt_BR",
-    siteName: "QuantumGraph",
+    siteName: "QuantumGraph AI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuantumGraph - Universo de Soluções em IA",
-    description: "Explore o universo interativo de grafos 3D da QuantumGraph. Sistemas agênticos, Machine Learning e soluções avançadas em IA.",
+    title: "QuantumGraph AI - Consultoria em Inteligência Artificial",
+    description: "Consultoria especializada em IA, sistemas agênticos e computação quântica.",
     creator: "@quantumgraph",
   },
 };
@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head></head>
-      <body suppressHydrationWarning className="antialiased bg-black overflow-hidden">
+      <body suppressHydrationWarning className="antialiased bg-black">
         {children}
       </body>
     </html>
