@@ -39,12 +39,6 @@ const customJestConfig = {
     'html',
     'json-summary',
   ],
-  moduleNameMapping: {
-    // Handle module aliases (if you're using them in your app)
-    '^@/(.*)$': '<rootDir>/src/$1',
-    '^@/lib/(.*)$': '<rootDir>/src/lib/$1',
-    '^@/components/(.*)$': '<rootDir>/src/components/$1',
-  },
   transform: {
     // Use SWC to transform TypeScript and JavaScript files
     '^.+\\.(js|jsx|ts|tsx)$': ['@swc/jest', {
@@ -62,7 +56,7 @@ const customJestConfig = {
     }],
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!(framer-motion|@react-three|three)/)',
+    '/node_modules/(?!(framer-motion|@react-three|three)/)/',
   ],
   testTimeout: 10000,
   globals: {
@@ -73,9 +67,12 @@ const customJestConfig = {
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   // Performance optimization
   maxWorkers: '50%',
-  // Mock specific modules that cause issues in test environment
+  // Module mapping for aliases and mocks
   moduleNameMapping: {
+    // Handle module aliases (if you're using them in your app)
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/lib/(.*)$': '<rootDir>/src/lib/$1',
+    '^@/components/(.*)$': '<rootDir>/src/components/$1',
     // Mock Three.js and related modules for tests
     '^three$': '<rootDir>/tests/__mocks__/three.js',
     '^@react-three/fiber$': '<rootDir>/tests/__mocks__/react-three-fiber.js',

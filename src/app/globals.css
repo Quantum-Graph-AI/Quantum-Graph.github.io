@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import scroll navigation styles */
+@import '../styles/scroll-navigation.css';
+
 /* Custom animations */
 @keyframes blob {
   0% {
