@@ -10,16 +10,22 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Base system colors
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))'
+        surface: 'hsl(var(--surface))',
+        'surface-elevated': 'hsl(var(--surface-elevated))',
+
+        // Brand colors
+        quantum: {
+          cyan: 'hsl(var(--quantum-cyan))',
+          purple: 'hsl(var(--quantum-purple))',
+          blue: 'hsl(var(--quantum-blue))',
+          pink: 'hsl(var(--quantum-pink))',
+          green: 'hsl(var(--quantum-green))',
         },
-        popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))'
-        },
+
+        // Semantic colors
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))'
@@ -28,21 +34,37 @@ export default {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))'
         },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
-        },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))'
         },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))'
+
+        // UI colors
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))'
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))'
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))'
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+
+        // Status colors
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))'
+        },
+        success: 'hsl(var(--success))',
+        warning: 'hsl(var(--warning))',
+
+        // Chart colors
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',

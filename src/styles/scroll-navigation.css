@@ -1,0 +1,170 @@
+/* Scroll Navigation Styles */
+@layer utilities {
+  /* Smooth scrolling for the entire document */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+
+  /* Enhanced section visibility and transitions */
+  .section-transition {
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  }
+
+  .section-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .section-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Scroll snap for better section navigation */
+  .scroll-container {
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 100px;
+  }
+
+  .scroll-section {
+    scroll-snap-align: start;
+    scroll-margin-top: 100px;
+  }
+
+  /* Hide scrollbar for cleaner appearance while maintaining functionality */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(75, 85, 99, 0.5) transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(75, 85, 99, 0.5);
+    border-radius: 10px;
+    border: 2px solid transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(75, 85, 99, 0.8);
+  }
+
+  /* Progress indicator animations */
+  .progress-dot {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .progress-dot:hover {
+    transform: scale(1.2);
+  }
+
+  .progress-dot.active {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  /* Scroll direction indicators */
+  .scroll-arrow {
+    transition: all 0.3s ease;
+  }
+
+  .scroll-arrow:hover {
+    transform: translateY(-2px);
+  }
+
+  .scroll-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 80px;
+    }
+
+    .scroll-section {
+      scroll-margin-top: 80px;
+    }
+  }
+
+  /* Reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .section-transition,
+    .progress-dot,
+    .scroll-arrow {
+      transition: none;
+    }
+
+    .progress-dot.active {
+      animation: none;
+    }
+  }
+
+  /* Focus management for keyboard navigation */
+  .scroll-navigation-focus:focus-visible {
+    outline: 2px solid #06b6d4;
+    outline-offset: 2px;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .progress-dot {
+      border: 2px solid currentColor;
+    }
+
+    .scroll-arrow {
+      background-color: Canvas;
+      border: 1px solid CanvasText;
+      color: CanvasText;
+    }
+  }
+}
+
+/* Section fade-in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Intersection observer target elements */
+.intersection-target {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.intersection-target.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

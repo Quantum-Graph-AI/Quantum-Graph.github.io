@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { Code, Brain, Zap, Github, Linkedin, Mail, ExternalLink, ArrowRight, CheckCircle, Users, Lightbulb, Target, Star, MessageSquare, Calendar, Tag } from 'lucide-react';
+import { scrollToSection } from '@/lib/smoothScroll';
+import ScrollNavigation from '@/components/ScrollNavigation';
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -12,35 +14,44 @@ export default function Home() {
 
   if (!isClient) {
     return (
-      <div className="min-h-screen w-full bg-gradient-to-br from-gray-900 via-black to-blue-900 flex items-center justify-center">
+      <div className="min-h-screen w-full bg-gradient-to-br from-surface via-background to-surface-elevated flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 mb-4">
+          <h1 className="text-4xl font-bold text-gradient-quantum mb-4">
             QuantumGraph AI
           </h1>
-          <p className="text-gray-400">Carregando...</p>
+          <p className="text-muted-foreground">Carregando...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <header className="fixed top-0 w-full bg-black/80 backdrop-blur-sm z-50 border-b border-gray-800">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-background text-foreground relative custom-scrollbar">
+      {/* Enhanced Scroll Navigation */}
+      <ScrollNavigation
+        enableKeyboard={true}
+        enableWheel={false}
+        showProgressIndicator={true}
+      />
+      {/* Header with Logo Background */}
+      <header className="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div className="absolute inset-0 opacity-5">
+          <img src="/logo.png" alt="" className="w-full h-full object-cover object-center" />
+        </div>
+        <nav className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
-              <img src="/Quantum-Graph.github.io/logo.png" alt="QuantumGraph AI" className="w-8 h-8 rounded-lg" />
-              <span className="text-xl font-bold">QuantumGraph AI</span>
+              <img src="/logo.png" alt="QuantumGraph AI" className="w-8 h-8 rounded-lg" />
+              <span className="text-xl font-bold text-white">QuantumGraph AI</span>
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#home" className="hover:text-cyan-400 transition-colors">Início</a>
-              <a href="#projects" className="hover:text-cyan-400 transition-colors">Projetos</a>
-              <a href="#services" className="hover:text-cyan-400 transition-colors">Consultoria</a>
-              <a href="#about" className="hover:text-cyan-400 transition-colors">Fundador</a>
-              <a href="#blog" className="hover:text-cyan-400 transition-colors">Blog</a>
-              <a href="#quantum" className="hover:text-cyan-400 transition-colors">Quântica</a>
-              <a href="#contact" className="hover:text-cyan-400 transition-colors">Contato</a>
+              <button onClick={() => scrollToSection('#home')} className="text-gray-300 hover:text-cyan-400 transition-colors">Início</button>
+              <button onClick={() => scrollToSection('#projects')} className="text-gray-300 hover:text-cyan-400 transition-colors">Projetos</button>
+              <button onClick={() => scrollToSection('#services')} className="text-gray-300 hover:text-cyan-400 transition-colors">Consultoria</button>
+              <button onClick={() => scrollToSection('#about')} className="text-gray-300 hover:text-cyan-400 transition-colors">Fundador</button>
+              <button onClick={() => scrollToSection('#blog')} className="text-gray-300 hover:text-cyan-400 transition-colors">Blog</button>
+              <button onClick={() => scrollToSection('#quantum')} className="text-gray-300 hover:text-cyan-400 transition-colors">Quântica</button>
+              <button onClick={() => scrollToSection('#contact')} className="text-gray-300 hover:text-cyan-400 transition-colors">Contato</button>
             </div>
             <div className="flex space-x-4">
               <a href="https://github.com/SamoraDC" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
@@ -55,7 +66,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-blue-900 flex items-center pt-20 pb-20">
+      <section id="home" className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-blue-900 flex items-center pt-20 pb-20 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
@@ -98,19 +109,19 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#projects" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
+              <button onClick={() => scrollToSection('#projects')} className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300">
                 Explore Nossos Projetos
-              </a>
-              <a href="#contact" className="px-8 py-4 border-2 border-gray-600 text-white font-semibold rounded-full hover:bg-gray-800/50 transition-all duration-300">
+              </button>
+              <button onClick={() => scrollToSection('#contact')} className="px-8 py-4 border-2 border-gray-600 text-white font-semibold rounded-full hover:bg-gray-800/50 transition-all duration-300">
                 Entre em Contato
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-900">
+      <section id="projects" className="py-20 bg-gray-900 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
@@ -169,7 +180,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-black">
+      <section id="services" className="py-20 bg-black scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
@@ -242,17 +253,17 @@ export default function Home() {
             </div>
             <div className="text-center mt-8">
               <p className="text-sm text-gray-400 mb-4">Serviço mediante disponibilidade</p>
-              <a href="#contact" className="inline-flex items-center space-x-2 px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors">
+              <button onClick={() => scrollToSection('#contact')} className="inline-flex items-center space-x-2 px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors">
                 <span>Solicitar Consultoria</span>
                 <ArrowRight size={16} />
-              </a>
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gray-900">
+      <section id="about" className="py-20 bg-gray-900 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
@@ -317,7 +328,7 @@ export default function Home() {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="py-20 bg-black">
+      <section id="blog" className="py-20 bg-black scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
@@ -389,7 +400,7 @@ export default function Home() {
       </section>
 
       {/* Quantum Section */}
-      <section id="quantum" className="py-20 bg-gradient-to-br from-blue-900/20 to-purple-900/20">
+      <section id="quantum" className="py-20 bg-gradient-to-br from-blue-900/20 to-purple-900/20 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
@@ -469,7 +480,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-900">
+      <section id="contact" className="py-20 bg-gray-900 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">
@@ -561,15 +572,15 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Serviços</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#services" className="hover:text-white transition-colors">Consultoria IA</a></li>
-                <li><a href="#projects" className="hover:text-white transition-colors">Projetos Open-Source</a></li>
-                <li><a href="#quantum" className="hover:text-white transition-colors">Computação Quântica</a></li>
+                <li><button onClick={() => scrollToSection('#services')} className="hover:text-white transition-colors">Consultoria IA</button></li>
+                <li><button onClick={() => scrollToSection('#projects')} className="hover:text-white transition-colors">Projetos Open-Source</button></li>
+                <li><button onClick={() => scrollToSection('#quantum')} className="hover:text-white transition-colors">Computação Quântica</button></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Recursos</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#blog" className="hover:text-white transition-colors">Blog</a></li>
+                <li><button onClick={() => scrollToSection('#blog')} className="hover:text-white transition-colors">Blog</button></li>
                 <li><a href="https://medium.com/@samora.davi" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Medium</a></li>
                 <li><a href="https://github.com/SamoraDC" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a></li>
               </ul>
