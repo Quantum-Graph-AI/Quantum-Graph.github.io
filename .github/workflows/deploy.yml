@@ -50,9 +50,12 @@ jobs:
 
     - name: Install dependencies with retry and fallback
       run: |
+        echo "Removing potentially corrupted package-lock.json"
+        rm -f package-lock.json
+
         for i in {1..5}; do
           echo "Attempt $i of 5..."
-          if npm ci --legacy-peer-deps --no-audit --no-fund --verbose; then
+          if npm install --legacy-peer-deps --no-audit --no-fund --verbose; then
             echo "Dependencies installed successfully!"
             break
           else
@@ -63,8 +66,8 @@ jobs:
               echo "Clearing npm cache..."
               npm cache clean --force
             else
-              echo "All attempts failed. Trying with npm install as fallback..."
-              npm install --legacy-peer-deps --no-audit --no-fund
+              echo "All attempts failed."
+              exit 1
             fi
           fi
         done
